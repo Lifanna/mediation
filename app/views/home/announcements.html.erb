@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12 mt-2">
+            <h1 class="h1"><b>Объявления</b></h1>
+        </div>
+        <% @announcements.each do |announcement| %>
+            <div class="col-12 mt-4">
+                <span><%= Date.parse(announcement.created_at.to_s).strftime("%d.%m.%Y") %></span><br>
+                <a href="/announcements/<%= announcement.id %>" class="text-success"><b><%= announcement.header %></b></a>
+            </div>
+        <% end if @announcements %>
+    </div>
+</div>

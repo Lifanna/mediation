@@ -1,0 +1,82 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   'true': 'foo'
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+ru:
+  header:
+    callback: "Перезвонить нам"
+    request: "Отправить заявку"
+  main_menu:
+    announcements: "Объявления"
+    news: "Новости"
+    practical_jurisp: "Практическая юриспруденция"
+    question_answ: "Вопрос-ответ"
+    archive: "Архив"
+  nav_btns:
+    main: "Главная"
+    mediation_law: "Законодательство о медиации"
+    mediation_code: "Кодекс этики медиатора"
+    scientific_activity: "Научная деятельность"
+    mediation_courses: "Курсы медиаторов, тренинги"
+    mediation_register: "Реестр медиаторов"
+  modal:
+    header: "Оставить заявку"
+    sender_name: "Ваше имя"
+    sender_email: "Email"
+    sender_phone: "Телефон"
+    sender_message: "Ваше сообщение"
+    send_btn: "Отправить"
+    cancel_btn: "Отмена"
+  footer:
+    organization: "Центр примирения"
+    contacts: "Республика Казахстан, 100008, г.Караганда район им. Казыбек би, пр.Бухар-жырау, 55 оф. 211"
+  errors:
+    not_found: "Запрошенный Вами ресурс не найден!"
+    home_btn: "Вернуться на домашнюю страницу"
+  activerecord:
+    errors:
+      messages:
+        record_invalid: "Некорректные данные: %{errors}"
+      models:
+        admin_user:
+          attributes:
+            email:
+              blank: "Email администратора не заполнен"
+            password:
+              blank: "Пароль администратора не заполнен"
+        article:
+          attributes: 
+            header: "Заголовок"
+            body: "Содержимое"
+  time:
+    formats:
+      long: "%Y-%m-%d %H:%M:%S"
+  active_admin:
+    language_dropdown: "Язык интерфейса"

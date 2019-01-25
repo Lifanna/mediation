@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mediation</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+  <nav class="navbar navbar-expand-md navbar-light">
+    <a class="navbar-brand d-md-none d-block" href="/"><img class="navbar-brand" src="/assets/logo_new.png"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <div class="row">
+            <div class="col-2">
+              <a class="navbar-brand d-none d-md-block" href="/"><img class="navbar-brand" src="/assets/logo_new.png"></a>
+            </div>
+            <div class="col-lg-2 col-md-3 offset-lg-6 offset-md-4 d-none d-md-block">
+              <h5 class="h5 mt-2">8-701-789-12-12</h5>
+            </div>
+            <div class="col-lg-2 col-md-3 d-none d-md-block">
+              <ul class="nav navbar-nav">
+                <li class="dropdown">
+                  <a href="#" class="text-primary dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span id="lanNavSel">язык</span> <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+            	        <a href="/ru" class="text-primary <%= "font-weight-bold" if I18n.locale == :ru %>">Русский</a>
+                      <a href="/en" class="text-primary <%= "font-weight-bold" if I18n.locale == :en %>">English</a>
+        	          </ul>
+                </li>
+              </ul>
+              <a class="btn btn-success btn-block btn-responsive mt-2" data-toggle="modal" data-backdrop="true" href="#sendMessageModal"><%= t("header.request") %></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div class="col-12">
+            <ul class="navbar nav-pills nav-fill mainMenu" style="background: linear-gradient(to right, #032e3e, #08373e);">
+              <li class="col-lg-2 col-md-4 col-sm-4 col-12 nav-item">
+                <a class="nav-link text-white" href="/index"><%= t("nav_btns.main") %></a>
+              </li>
+              <li class="col-lg-2 col-md-4 col-sm-4 col-12 nav-item">
+                <a class="nav-link text-white" href="/mediation_law"><%= t("nav_btns.mediation_law") %></a>
+              </li>
+              <li class="col-lg-2 col-md-4 col-sm-4 col-12 nav-item">
+                <a class="nav-link text-white" href="/mediation_code"><%= t("nav_btns.mediation_code") %></a>
+              </li>
+              <li class="col-lg-2 col-md-4 col-sm-4 col-12 nav-item">
+                <a class="nav-link text-white" href="/scientific_activity"><%= t("nav_btns.scientific_activity") %></a>
+              </li>
+              <li class="col-lg-2 col-md-4 col-sm-4 col-12 nav-item">
+                <a class="nav-link text-white" href="/mediation_courses"><%= t("nav_btns.mediation_courses") %></a>
+              </li>
+              <li class="col-lg-2 col-md-4 col-sm-4 col-12 nav-item">
+                <a class="nav-link text-white" href="/mediation_register"><%= t("nav_btns.mediation_register") %></a>
+              </li>
+              <li class="col-lg-2 col-md-4 col-sm-4 offset-sm-4 col-12 nav-item d-md-none d-block">
+                <ul class="navbar-nav">
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      язык
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                      <a href="/ru" class="text-primary <%= "font-weight-bold" if I18n.locale == :ru %>">Русский</a>
+                        <a href="/en" class="text-primary <%= "font-weight-bold" if I18n.locale == :en %>">English</a>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid mt-2">
+    <div class="row p-3 text-center">
+      <div class="col-lg-2 offset-lg-1 col-md-4 col-sm-4 rounded bg-light border zoom">
+        <a href="/announcements">
+          <i class="fa fa-bullhorn fa-4 mt-3" aria-hidden="true"></i>
+          <p><%= t("main_menu.announcements") %></p>
+        </a>
+      </div>
+      <div class="col-lg-2 col-md-4 col-sm-4 rounded bg-light border zoom">
+        <a href="/news">
+          <i class="fa fa-newspaper-o fa-4 mt-3" aria-hidden="true"></i>
+          <p><%= t("main_menu.news") %></p>
+        </a>
+      </div>
+      <div class="col-lg-2 col-md-4 col-sm-4 rounded bg-light border zoom">
+        <a href="#">
+          <i class="fa fa-book fa-4 mt-3" aria-hidden="true"></i>
+          <p><%= t("main_menu.practical_jurisp") %></p>
+        </a>
+      </div>
+      <div class="col-lg-2 col-md-6 col-sm-6 rounded bg-light border zoom">
+        <a href="/questions">
+          <i class="fa fa-comments-o fa-4 mt-3" aria-hidden="true"></i>
+          <p><%= t("main_menu.question_answ") %></p>
+        </a>
+      </div>
+      <div class="col-lg-2 col-md-6 col-sm-6 rounded bg-light border zoom">
+        <a href="/archive">
+          <i class="fa fa-archive fa-4 mt-3" aria-hidden="true"></i>
+          <p><%= t("main_menu.archive") %></p>
+        </a>
+      </div>
+    </div>
+  </div>
+
+    <%= yield %>
+    <%= render "home/send_mail_modal" %>
+
+    <footer class="footer context-dark bg-image" style="background: #032e3e; margin-top: 80px;">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-12 text-sm-left text-center">
+              <%= t("footer.organization") %>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-12 text-sm-left text-center">
+              <p>institut.mediacii@mail.ru</p>
+              <p><%= t("footer.contacts") %></p>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-12 text-sm-left text-center">
+              Создание сайта — artpix
+            </div>
+          </div>
+        </div>
+      </footer>
+    
+    
+  </body>
+</html>

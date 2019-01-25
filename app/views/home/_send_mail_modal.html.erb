@@ -1,0 +1,28 @@
+<div class="modal fade" id="sendMessageModal" role="dialog" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+    <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title"><%= t("modal.header") %></h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form method="post" id="sendMessageForm">
+                <div class="modal-body">
+                    <input type="text" id="senderName" name="mail[name]" class="form-control" placeholder="<%= t("modal.sender_name") %>" />
+                    <input type="text" id="senderEmail" name="mail[email]" class="form-control mt-2" placeholder="<%= t("modal.sender_email") %>" />
+                    <input type="text" id="senderPhone" name="mail[phone]" class="form-control mt-2" placeholder="<%= t("modal.sender_phone") %>" />
+                </div>
+                <div class="modal-body">
+                    <textarea id="messageText" name="mail[message]" class="form-control" rows="4" placeholder="<%= t("modal.sender_message") %>" required></textarea>
+                </div>
+                <div class="modal-footer">
+                    <p id="reqResult" class="text-success d-none">asd</p>
+                    <button type="button" id="sendReqBtn" class="btn btn-success"><%= t("modal.send_btn") %></button>
+                    <button type="button" id="sendToPhoneCloseBtn" class="btn btn-danger" data-dismiss="modal"><%= t("modal.cancel_btn") %></button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

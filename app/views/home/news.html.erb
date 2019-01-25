@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12 mt-2">
+            <h1 class="h1"><b>Новости</b></h1>
+        </div>
+        <% @articles.each do |article| %>
+            <div class="col-12 mt-4">
+                <span><%= Date.parse(article.created_at.to_s).strftime("%d.%m.%Y") %></span><br>
+                <h5 class="h5 mt-1"><a href="/news/<%= article.id %>" class="text-success"><b><%= article.header %></b></a></h5>
+                <p class="text-justify text-muted"><%= article.body %>...</p>
+            </div>
+        <% end if @articles %>
+        <div class="col-12 mt-2 pagination justify-content-center">
+            <%= paginate @articles, theme: 'twitter-bootstrap-4', pagination_class: "pagination" %>
+        </div>
+    </div>
+</div>

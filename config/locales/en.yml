@@ -1,0 +1,64 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   'true': 'foo'
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+en:
+  header:
+    callback: "Call us"
+    request: "Send request"
+  main_menu:
+    announcements: "Announcements"
+    news: "News"
+    practical_jurisp: "Practical jurisprudence"
+    question_answ: "Question-answer"
+    archive: "Archive"
+  nav_btns:
+    main: "Main"
+    mediation_law: "Mediation laws"
+    mediation_code: "Mediation code"
+    scientific_activity: "Scientific activity"
+    mediation_courses: "Mediation courses"
+    mediation_register: "Mediation register"
+  modal:
+    header: "Submit application"
+    sender_name: "Your name"
+    sender_email: "Your email"
+    sender_phone: "Your phone"
+    sender_message: "Your message"
+    send_btn: "Submit"
+    cancel_btn: "Cancel"
+  footer:
+    organization: "Conciliation center"
+    contacts: "Republic of Kazakhstan, 100008, Karagandy, Kazybek bi distr., Bukhar-Zhyrau avenue, 55, room 211"
+  errors:
+    not_found: "Resource not found!"
+    home_btn: "Take me home"
+  active_admin:
+    language_dropdown: "Languages"
